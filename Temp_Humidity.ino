@@ -3,7 +3,7 @@
 
 DHT dht (13,DHT11); //initialise the DHT module
 LiquidCrystal lcd(12,11,5,4,3,2); //initialise the lcd screen using pins lcd(rs, en, d4, d5, d6, d7)
-//int x = 1;
+
 
 void setup() {
 dht.begin();
@@ -19,9 +19,6 @@ void loop() {
 float t = dht.readTemperature(); 
 float h = dht.readHumidity();
 
-//Serial.print("----------DAY ");
-//Serial.print(x);
-//Serial.println("----------");
 Serial.print("Temperature ");
 Serial.print(t);
 Serial.println("C");
@@ -37,9 +34,6 @@ lcd.setCursor(0, 1);
 lcd.print("Humid: ");
 lcd.print(h);
 lcd.print("%");
-//x=x+1;
 
 delay(2000);
-
-//delay(86400000); //record temperature once per day
 }
